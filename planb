@@ -1,0 +1,31 @@
+    <ul class="w-48 text-sm font-medium text-black dark:text-black" style="background-color: white; width: 200px; box-shadow: 5px 5px 5px rgb(184, 183, 183); height: 945px;">
+        <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+            <div class="flex items-center ps-3">
+                <input id="list-radio-license" type="radio" value="" name="list-radio" class="w-4 h-4 text-blue-600 bg-white border-black focus:ring-white focus:ring-2">
+                <label for="list-radio-license" class="w-full py-3 ms-2 text-sm font-medium text-black dark:text-black">sirwal</label>
+            </div>
+        </li>
+        <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+            <div class="flex items-center ps-3">
+                <input id="list-radio-id" type="radio" value="" name="list-radio" class="w-4 h-4 text-blue-600 bg-white border-black focus:ring-white focus:ring-2">
+                <label for="list-radio-id" class="w-full py-3 ms-2 text-sm font-medium text-black dark:text-black">3abaya</label>
+            </div>
+        </li>
+        <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+            <div class="flex items-center ps-3">
+                <input id="list-radio-military" type="radio" value="" name="list-radio" class="w-4 h-4 text-blue-600 bg-white border-black focus:ring-white focus:ring-2">
+                <label for="list-radio-military" class="w-full py-3 ms-2 text-sm font-medium text-black dark:text-black">rouba</label>
+            </div>
+        </li>
+        <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+            <div class="flex items-center ps-3">
+                <input id="list-radio-passport" type="radio" value="" name="list-radio" class="w-4 h-4 text-blue-600 bg-white border-black focus:ring-white focus:ring-2">
+                <label for="list-radio-passport" class="w-full py-3 ms-2 text-sm font-medium text-black dark:text-black">m7arma alah yihdahom</label>
+            </div>
+        </li>
+        <br>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" style="margin-left: 26%;">
+            Click me
+          </button>
+    </ul>
+    
