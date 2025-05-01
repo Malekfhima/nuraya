@@ -7,26 +7,260 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="flex items-center justify-center py-4 md:py-8 flex-wrap">
-        <button type="button" class="text-white border border-[#d697d7] hover:bg-[#c179c9] focus:ring-4 focus:outline-none focus:ring-pink-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3" style = "background-color: #d697d7">All categories</button>
-        <button type="button" class="text-white border border-[#d697d7] hover:bg-[#c179c9] focus:ring-4 focus:outline-none focus:ring-pink-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3" style = "background-color: #d697d7">3baya</button>
-        <button type="button" class="text-white border border-[#d697d7] hover:bg-[#c179c9] focus:ring-4 focus:outline-none focus:ring-pink-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3" style = "background-color: #d697d7">srawil</button>
-        <button type="button" class="text-white border border-[#d697d7] hover:bg-[#c179c9] focus:ring-4 focus:outline-none focus:ring-pink-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3" style = "background-color: #d697d7">m7arma alah yihdahom</button>
-        <button type="button" class="text-white border border-[#d697d7] hover:bg-[#c179c9] focus:ring-4 focus:outline-none focus:ring-pink-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3" style = "background-color: #d697d7">rouba</button>
-    </div>    
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="../img/droit.png" alt="">
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">nuraya</a>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">New Arrivals</a></li>
+                <li><a href="#">Collections</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            
+            <div class="icons">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#"><i class="fas fa-user"></i></a>
+                <a href="#" class="cart-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <section class="featured-products">
+        <h2 class="section-title">Featured Products</h2>
+        <div class="products">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb595d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Floral Summer Dress">
+                    <span class="product-badge">New</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Floral Summer Dress</h3>
+                    <div class="product-price">
+                        <div>
+                            <span class="current-price">$49.99</span>
+                            <span class="old-price">$69.99</span>
+                        </div>
+                        <button class="add-to-cart" data-id="1" data-name="Floral Summer Dress" data-price="49.99" data-image="https://images.unsplash.com/photo-1585487000160-6ebcfceb595d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="High Waist Jeans">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">High Waist Jeans</h3>
+                    <div class="product-price">
+                        <div>
+                            <span class="current-price">$59.99</span>
+                        </div>
+                        <button class="add-to-cart" data-id="2" data-name="High Waist Jeans" data-price="59.99" data-image="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Silk Blouse">
+                    <span class="product-badge">Sale</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Silk Blouse</h3>
+                    <div class="product-price">
+                        <div>
+                            <span class="current-price">$39.99</span>
+                            <span class="old-price">$49.99</span>
+                        </div>
+                        <button class="add-to-cart" data-id="3" data-name="Silk Blouse" data-price="39.99" data-image="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Knit Sweater">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Knit Sweater</h3>
+                    <div class="product-price">
+                        <div>
+                            <span class="current-price">$45.99</span>
+                        </div>
+                        <button class="add-to-cart" data-id="4" data-name="Knit Sweater" data-price="45.99" data-image="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="../img/gauche.png" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="../img/gauche.png" alt="">
+    </section>
+    <div class="modal-overlay">
+        <div class="cart-modal">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button class="close-cart">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="cart-items">
+                <!-- Cart items will be added here dynamically -->
+                <div class="empty-cart">
+                    <i class="fas fa-shopping-bag" style="font-size: 40px; margin-bottom: 15px;"></i>
+                    <p>Your cart is empty</p>
+                </div>
+            </div>
+            <div class="cart-total">
+                Total: <span>$0.00</span>
+            </div>
+            <button class="checkout-btn">Checkout</button>
         </div>
     </div>
-    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                this.innerHTML = navLinks.classList.contains('active') ? 
+                    '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
+            
+            // Cart Functionality
+            const cartIcon = document.querySelector('.cart-icon');
+            const cartModal = document.querySelector('.modal-overlay');
+            const closeCart = document.querySelector('.close-cart');
+            const cartItemsContainer = document.querySelector('.cart-items');
+            const cartTotal = document.querySelector('.cart-total span');
+            const cartCount = document.querySelector('.cart-count');
+            const addToCartBtns = document.querySelectorAll('.add-to-cart');
+            
+            let cart = [];
+            
+            // Open/Close Cart
+            cartIcon.addEventListener('click', function(e) {
+                e.preventDefault();
+                cartModal.classList.add('active');
+            });
+            
+            closeCart.addEventListener('click', function() {
+                cartModal.classList.remove('active');
+            });
+            
+            // Add to Cart
+            addToCartBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const id = this.getAttribute('data-id');
+                    const name = this.getAttribute('data-name');
+                    const price = parseFloat(this.getAttribute('data-price'));
+                    const image = this.getAttribute('data-image');
+                    
+                    // Check if item already in cart
+                    const existingItem = cart.find(item => item.id === id);
+                    
+                    if (existingItem) {
+                        existingItem.quantity += 1;
+                    } else {
+                        cart.push({
+                            id,
+                            name,
+                            price,
+                            image,
+                            quantity: 1
+                        });
+                    }
+                    
+                    updateCart();
+                    showAddToCartFeedback(this);
+                });
+            });
+            
+            // Update Cart
+            function updateCart() {
+                // Update cart count
+                const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+                cartCount.textContent = totalItems;
+                
+                // Update cart items
+                if (cart.length === 0) {
+                    cartItemsContainer.innerHTML = `
+                        <div class="empty-cart">
+                            <i class="fas fa-shopping-bag" style="font-size: 40px; margin-bottom: 15px;"></i>
+                            <p>Your cart is empty</p>
+                        </div>
+                    `;
+                } else {
+                    cartItemsContainer.innerHTML = cart.map(item => `
+                        <div class="cart-item">
+                            <img src="${item.image}" alt="${item.name}" class="cart-item-img">
+                            <div class="cart-item-details">
+                                <h4 class="cart-item-title">${item.name}</h4>
+                                <p class="cart-item-price">$${item.price.toFixed(2)}</p>
+                                <button class="cart-item-remove" data-id="${item.id}">
+                                    <i class="fas fa-trash-alt"></i> Remove
+                                </button>
+                            </div>
+                            <div class="cart-item-quantity">${item.quantity}</div>
+                        </div>
+                    `).join('');
+                    
+                    // Add event listeners to remove buttons
+                    document.querySelectorAll('.cart-item-remove').forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            const id = this.getAttribute('data-id');
+                            cart = cart.filter(item => item.id !== id);
+                            updateCart();
+                        });
+                    });
+                }
+                
+                // Update total
+                const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                cartTotal.textContent = `$${total.toFixed(2)}`;
+            }
+            
+            // Show feedback when adding to cart
+            function showAddToCartFeedback(button) {
+                const originalHTML = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check"></i>';
+                button.style.backgroundColor = '#4CAF50';
+                
+                setTimeout(() => {
+                    button.innerHTML = originalHTML;
+                    button.style.backgroundColor = '';
+                }, 1000);
+            }
+            
+            // Newsletter Form Submission
+            const newsletterForm = document.querySelector('.newsletter-form');
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input').value;
+                alert(`Thank you for subscribing with ${email}! You'll receive our newsletter soon.`);
+                this.reset();
+            });
+        });
+    </script>
 </body>
 </html>
