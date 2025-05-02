@@ -205,6 +205,9 @@
                             <p>Your cart is empty</p>
                         </div>
                     `;
+                    if(cart = []){
+                            cartCount.style = "visibility: hidden;"
+                        }
                 } else {
                     cartItemsContainer.innerHTML = cart.map(item => `
                         <div class="cart-item">
@@ -219,7 +222,7 @@
                             <div class="cart-item-quantity">${item.quantity}</div>
                         </div>
                     `).join('');
-                    
+        
                     // Add event listeners to remove buttons
                     document.querySelectorAll('.cart-item-remove').forEach(btn => {
                         btn.addEventListener('click', function() {
