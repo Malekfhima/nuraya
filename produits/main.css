@@ -90,16 +90,8 @@
         .icons a:hover {
             color: var(--dark-pink);
         }
-
-        .cart-count {
-            background-color: var(--dark-pink);
-            color: white;
-            border-radius: 50%;
-            padding: 2px 6px;
-            font-size: 12px;
-            position: relative;
-            top: -10px;
-            right: 10px;
+        .cart-count{
+            color: var(--light-pink);
         }
 
         /* Hero Section */
