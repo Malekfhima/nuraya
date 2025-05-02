@@ -90,10 +90,16 @@
         .icons a:hover {
             color: var(--dark-pink);
         }
-        .cart-count{
-            color: var(--light-pink);
+        .cart-count {
+            background-color: var(--dark-pink);
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 12px;
+            position: relative;
+            top: -10px;
+            right: 10px;
         }
-
         /* Hero Section */
         .hero {
             background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
