@@ -1,7 +1,6 @@
 <?php
 include '../cnx.php';
 extract($_POST);
-$message = "";
 // Handle form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $targetDir = "uploaded/";
@@ -14,18 +13,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($check !== false) {
         // Limit file size (e.g., 5MB)
         if ($_FILES["image"]["size"] > 5 * 1024 * 1024) {
-            $message = "❌ File is too large.";
+            die ("<script>document.getElementById('errimg').innerHTML = 'File is too large.'</script>");
         } elseif (!in_array($imageFileType, ["jpg", "jpeg", "png", "gif"])) {
-            $message = "❌ Only JPG, JPEG, PNG, and GIF files are allowed.";
+            die ("<script>document.getElementById('errimg').innerHTML = 'Only JPG, JPEG, PNG, and GIF files are allowed.'</script>");
         } else {
             // Move file to uploads folder
             if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
-                $message = "✅ The file " . htmlspecialchars($fileName) . " has been uploaded.";
+                echo "<script>document.getElementById('errimg').innerHTML = 'the file $fileName has been uploaded'</script>";
             } else {
-                $message = "❌ Error uploading your file.";
+
+                die ("<script>document.getElementById('errimg').innerHTML = 'Error uploading your file.'</script>");
             }
         }
     } else {
-        $message = "❌ File is not an image.";
+        die ("<script>document.getElementById('errimg').innerHTML = 'File is not an image.'</die>(");
     }
+    $result_of_ins = mysqli_query($cnx, "INSERT into product ('$targetFile','$title','$price','$category','$description');");  
 }
