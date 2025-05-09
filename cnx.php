@@ -1,2 +1,2 @@
 <?php
-$d_cnx = mysqli_connect("localhost","root","","nuraya");
+$cnx = mysqli_connect("localhost","root","","nurayam");

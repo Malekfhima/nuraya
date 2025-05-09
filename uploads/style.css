@@ -47,9 +47,9 @@ label {
     color: var(--text-color);
 }
 
-input[type="text"], 
+input[type="text"],
 input[type="number"],
-textarea {
+textarea{
     width: 100%;
     padding: 12px 16px;
     border: 2px solid var(--border-color);
@@ -58,6 +58,58 @@ textarea {
     font-size: 15px;
     transition: all 0.3s ease;
     background-color: #fff;
+}
+select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234267B2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 16px;
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+select:hover {
+    border-color: var(--primary-color);
+}
+
+select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(66, 103, 178, 0.1);
+}
+
+select option {
+    padding: 12px;
+    font-size: 15px;
+}
+
+select option:first-child {
+    color: #65676b;
+}
+
+select.error {
+    border-color: var(--error-color) !important;
+    background-color: #fff8f8;
+}
+
+select.error:focus {
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+select.success {
+    border-color: var(--success-color) !important;
+    background-color: #f8fff8;
 }
 
 input[type="text"]:focus, 
@@ -148,11 +200,9 @@ textarea {
     color: var(--text-color);
     font-weight: 600;
 }
-
 #price {
     padding-left: 36px;
 }
-
 .error-message {
     color: var(--error-color);
     font-size: 13px;

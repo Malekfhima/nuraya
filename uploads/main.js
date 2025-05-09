@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('productForm');
     const titleInput = document.getElementById('title');
     const priceInput = document.getElementById('price');
+    const quantityInput = document.getElementById('quantity');
     const categoryInput = document.getElementById('category');
     const descriptionInput = document.getElementById('description');
     const photoInput = document.getElementById('photos');
@@ -77,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const titleError = createErrorElement(titleInput);
     const priceError = createErrorElement(priceInput);
+    const quantityError = createErrorElement(quantityInput);
     const categoryError = createErrorElement(categoryInput);
     const descriptionError = createErrorElement(descriptionInput);
 
@@ -120,9 +122,21 @@ document.addEventListener('DOMContentLoaded', function() {
         return true;
     };
 
+    const validateQuantity = () => {
+        if (!quantityInput.value || parseInt(quantityInput.value) < 0) {
+            quantityError.textContent = 'Please enter a valid quantity (0 or greater)';
+            quantityError.style.display = 'block';
+            quantityInput.classList.add('error');
+            return false;
+        }
+        quantityError.style.display = 'none';
+        quantityInput.classList.remove('error');
+        return true;
+    };
+
     const validateCategory = () => {
-        if (categoryInput.value.trim().length < 2) {
-            categoryError.textContent = 'Category must be at least 2 characters long';
+        if (!categoryInput.value || categoryInput.value === "0") {
+            categoryError.textContent = 'Please select a valid category';
             categoryError.style.display = 'block';
             categoryInput.classList.add('error');
             return false;
@@ -157,7 +171,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add event listeners for real-time validation
     titleInput.addEventListener('input', validateTitle);
     priceInput.addEventListener('input', validatePrice);
-    categoryInput.addEventListener('input', validateCategory);
+    quantityInput.addEventListener('input', validateQuantity);
+    categoryInput.addEventListener('change', validateCategory);
     descriptionInput.addEventListener('input', validateDescription);
 
     // Form submission validation
@@ -166,11 +181,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const isTitleValid = validateTitle();
         const isPriceValid = validatePrice();
+        const isQuantityValid = validateQuantity();
         const isCategoryValid = validateCategory();
         const isDescriptionValid = validateDescription();
         const isPhotoValid = validatePhoto();
 
-        if (isTitleValid && isPriceValid && isCategoryValid && isDescriptionValid && isPhotoValid) {
+        if (isTitleValid && isPriceValid && isQuantityValid && isCategoryValid && isDescriptionValid && isPhotoValid) {
             const submitBtn = this.querySelector('.btn');
             submitBtn.classList.add('loading');
             this.submit();
