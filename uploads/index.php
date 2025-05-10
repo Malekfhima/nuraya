@@ -4,10 +4,10 @@ $cat_res = mysqli_query($cnx,"SELECT * from categories");
 // Handle form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     extract($_POST);
-    $img_name = $_FILES["pro_images"]["name"][0];
+    $img_name = $_FILES["pro_images"]["name"];
     $pro_images = "../uploads/uploaded/" . $img_name;
-    move_uploaded_file($_FILES['pro_images']["tmp_name"][0],$pro_images);
-    $d = date("Y-m-d");
+    move_uploaded_file($_FILES['pro_images']["tmp_name"],$pro_images);
+    $d = date("Y-m-d h:i:sa");
     $result_of_ins = mysqli_query($cnx, "INSERT into products(name,description,price,stock_quantity,category_id,image_url,created_at,updated_at) values('$title','$description','$price','$quantity','$category','$pro_images','$d','$d');");  
 }
 ?>
@@ -19,50 +19,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Product Upload</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <style>
-        select {
-            width: 100%;
-            padding: 12px 16px;
-            border: 2px solid #dddfe2;
-            border-radius: 8px;
-            box-sizing: border-box;
-            font-size: 15px;
-            transition: all 0.3s ease;
-            background-color: #fff;
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234267B2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-            background-repeat: no-repeat;
-            background-position: right 16px center;
-            background-size: 16px;
-            padding-right: 40px;
-            cursor: pointer;
-        }
-
-        select:hover {
-            border-color: #4267B2;
-        }
-
-        select:focus {
-            outline: none;
-            border-color: #4267B2;
-            box-shadow: 0 0 0 3px rgba(66, 103, 178, 0.1);
-        }
-
-        select option {
-            padding: 12px;
-            font-size: 15px;
-        }
-
-        select option:first-child {
-            color: #65676b;
-        }
-    </style>
     <script src="main.js" defer></script>
 </head>
 <body>
+    <?php include '../adminsidebar.php'; ?>
+
     <div class="form-container">
+        
         <h2><i class="fas fa-plus-circle"></i> Create New Listing</h2>
         <form id="productForm" method="post"enctype="multipart/form-data">
             <div class="form-group">
@@ -115,7 +78,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </label>
                 <select name="category" id="category" required>
                     <option value="" disabled selected>Select a category</option>
-                    <option value="8">djaja</option>
                     <?php while($t = mysqli_fetch_assoc($cat_res)) : ?>
                         <option value="<?php echo $t['category_id']?>"><?php echo $t['name']?></option>
                     <?php endwhile ; ?>    
